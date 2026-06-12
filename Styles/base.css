@@ -8,47 +8,68 @@
   }
 
   body {
-    @apply mx-auto max-w-4xl bg-panel px-5 font-sans leading-7 text-ink antialiased;
+    @apply w-full min-h-screen bg-panel font-sans leading-relaxed text-ink antialiased overflow-x-hidden;
   }
 
   main {
-    @apply min-h-[60vh];
+    @apply min-h-[80vh];
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-ink;
   }
 
   h1 {
-    @apply mb-5 text-3xl font-bold tracking-normal text-ink md:text-4xl;
+    @apply text-4xl font-extrabold md:text-6xl;
   }
 
   h2 {
-    @apply mb-3 mt-8 text-2xl font-semibold tracking-normal text-ink;
+    @apply text-2xl font-bold md:text-3xl;
   }
 
   p {
-    @apply mb-4 text-muted;
+    @apply text-muted leading-relaxed;
   }
 
   a {
-    @apply text-accent underline-offset-4 transition-colors hover:text-accent-dark hover:underline;
+    @apply text-neon-purple underline-offset-4 transition-colors hover:text-white hover:underline;
   }
 
   ol,
   ul {
-    @apply mb-4 pl-6;
+    @apply mb-4 pl-6 list-none;
   }
 
   li {
-    @apply mb-1;
+    @apply mb-1 text-muted;
   }
 
   code {
-    @apply rounded bg-line/60 px-1.5 py-0.5 text-[0.9em] text-ink;
+    @apply rounded bg-line/40 px-1.5 py-0.5 text-[0.9em] text-ink font-mono;
   }
 
   pre {
-    @apply mb-4 overflow-x-auto rounded-lg bg-ink p-4 text-surface;
+    @apply mb-4 overflow-x-auto rounded-lg bg-surface border border-line p-4 text-ink;
   }
 
   pre code {
     @apply bg-transparent p-0 text-inherit;
+  }
+
+  /* Custom Glow Scrollbar for Modern UI */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e2430;
+    border-radius: 4px;
+    border: 1px solid #1307f5/20;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a626f2/30;
   }
 }

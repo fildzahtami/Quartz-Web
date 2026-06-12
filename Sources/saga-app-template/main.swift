@@ -5,9 +5,9 @@ import SagaSwimRenderer
 import SwiftTailwind
 
 enum SiteMetadata {
-  static let url = URL(string: "http://www.example.com")!
-  static let name = "Example App Landing Page"
-  static let author = "Brent Deverman"
+  static let url = URL(string: "https://testflight.apple.com/join/G8ufCuTB")!
+  static let name = "Quartz"
+  static let author = "Quartz Team"
 }
 
 struct ArticleMetadata: Metadata {

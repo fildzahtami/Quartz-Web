@@ -1,79 +1,155 @@
 @layer components {
+  /* Layout Headers */
   .site-header {
-    @apply mb-10 border-b border-line py-5;
+    @apply sticky top-0 z-50 w-full border-b border-line bg-panel/75 backdrop-blur-md py-4 transition-all duration-300;
   }
 
   .site-nav,
   .footer-nav {
-    @apply flex items-center justify-between gap-6;
+    @apply mx-auto max-w-6xl flex items-center justify-between gap-6 px-6;
   }
 
   .site-title {
-    @apply text-lg font-bold text-ink no-underline hover:text-accent hover:no-underline;
+    @apply flex items-center gap-2 text-xl font-bold text-ink tracking-tight no-underline hover:text-white hover:no-underline;
   }
 
   .nav-links {
-    @apply flex items-center gap-5;
+    @apply flex items-center gap-6;
   }
 
   .nav-links a {
-    @apply text-sm font-medium text-muted no-underline hover:text-ink hover:no-underline;
+    @apply text-sm font-medium text-muted no-underline transition-colors hover:text-white hover:no-underline;
   }
 
-  .page,
-  article {
-    @apply rounded-lg border border-line bg-surface p-6 shadow-sm md:p-8;
+  /* Main Container Layouts */
+  .container-custom {
+    @apply mx-auto max-w-6xl px-6 py-16 md:py-24;
   }
 
-  .tags {
-    @apply mb-5 flex list-none flex-wrap gap-2 p-0;
+  /* Premium Glowing Glass Cards */
+  .glass-card {
+    @apply relative overflow-hidden rounded-2xl border border-line bg-surface/80 p-6 md:p-8 backdrop-blur-md transition-all duration-300;
   }
 
-  .tags li {
-    @apply m-0;
+  .glass-card:hover {
+    @apply border-white/10;
   }
 
-  .tags a {
-    @apply rounded-full bg-panel px-3 py-1 text-sm font-medium text-muted no-underline ring-1 ring-line hover:bg-line/70 hover:text-ink hover:no-underline;
+  /* Custom Neon Glow Styles */
+  .glow-purple {
+    box-shadow: 0 0 40px -10px rgba(166, 38, 242, 0.25);
+  }
+  .glow-purple:hover {
+    box-shadow: 0 0 50px -5px rgba(166, 38, 242, 0.35);
   }
 
-  .article-card {
-    @apply border-b border-line py-5 last:border-b-0;
+  .glow-blue {
+    box-shadow: 0 0 40px -10px rgba(19, 7, 245, 0.25);
+  }
+  .glow-blue:hover {
+    box-shadow: 0 0 50px -5px rgba(19, 7, 245, 0.35);
   }
 
-  .article-card h2 {
-    @apply m-0 mb-2 text-xl;
+  .glow-magenta {
+    box-shadow: 0 0 30px -10px rgba(242, 46, 158, 0.2);
+  }
+  
+  .glow-green {
+    box-shadow: 0 0 30px -10px rgba(51, 224, 107, 0.2);
   }
 
-  .article-card p {
-    @apply m-0;
+  .glow-cyan {
+    box-shadow: 0 0 30px -10px rgba(2, 129, 255, 0.2);
   }
 
-  .tailwind-example {
-    @apply my-8 rounded-lg border border-teal-200 bg-gradient-to-br from-white to-teal-50 p-6 shadow-sm;
+  /* Background Glow Orbs */
+  .bg-orb {
+    @apply absolute rounded-full blur-[120px] pointer-events-none opacity-20;
   }
 
-  .tailwind-example__badge {
-    @apply mb-3 inline-flex items-center rounded-full bg-teal-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-teal-800;
+  /* Breathing Animation */
+  .pulse-breathing {
+    animation: breathing 4s ease-in-out infinite alternate;
   }
 
-  .tailwind-example__title {
-    @apply mb-2 text-2xl font-bold text-ink;
+  @keyframes breathing {
+    0% {
+      opacity: 0.6;
+      transform: scale(0.98);
+      filter: drop-shadow(0 0 15px rgba(166, 38, 242, 0.3));
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.02);
+      filter: drop-shadow(0 0 35px rgba(166, 38, 242, 0.6));
+    }
   }
 
-  .tailwind-example__copy {
-    @apply mb-4 max-w-2xl text-muted;
+  /* Text Gradients */
+  .gradient-text-purple-blue {
+    @apply bg-gradient-to-r from-neon-purple to-neon-blue bg-clip-text text-transparent;
   }
 
-  .tailwind-example__button {
-    @apply inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-accent-dark hover:text-white hover:no-underline;
+  .gradient-text-cyan-blue {
+    @apply bg-gradient-to-r from-neon-cyan to-neon-blue bg-clip-text text-transparent;
   }
 
+  /* Premium Glowing Button */
+  .glowing-btn {
+    @apply relative inline-flex items-center justify-center overflow-hidden rounded-full px-8 py-3 text-sm font-semibold text-white no-underline shadow-lg transition-all duration-300 hover:no-underline hover:scale-[1.03] active:scale-[0.98];
+    background: linear-gradient(135deg, #a626f2 0%, #1307f5 100%);
+    box-shadow: 0 4px 20px rgba(166, 38, 242, 0.4);
+  }
+
+  .glowing-btn:hover {
+    box-shadow: 0 6px 30px rgba(166, 38, 242, 0.6), 0 0 15px rgba(19, 7, 245, 0.4);
+  }
+
+  /* Secondary Button styling */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-line bg-surface/50 px-8 py-3 text-sm font-semibold text-white no-underline backdrop-blur-sm transition-all duration-300 hover:bg-surface hover:border-white/20 hover:no-underline;
+  }
+
+  /* Focus Economy Compounding Table */
+  .economy-table {
+    @apply w-full text-left border-collapse text-sm;
+  }
+
+  .economy-table th {
+    @apply border-b border-line py-3 px-4 text-muted font-semibold;
+  }
+
+  .economy-table td {
+    @apply border-b border-line py-4 px-4 text-ink font-medium;
+  }
+
+  .economy-table tr:last-child td {
+    @apply border-b-0;
+  }
+
+  /* Footer Style overrides */
   footer {
-    @apply mt-14 border-t border-line py-5 text-sm text-muted;
+    @apply mt-20 border-t border-line bg-surface/30 py-10 text-sm text-muted;
   }
 
   footer p {
-    @apply mb-0 mt-4 text-sm;
+    @apply mb-0 mt-4 text-sm text-center;
+  }
+
+  /* FAQ Accordion Styling */
+  .faq-item {
+    @apply border-b border-line py-5 last:border-b-0;
+  }
+
+  .faq-question {
+    @apply flex items-center justify-between text-base font-semibold text-ink cursor-pointer hover:text-neon-purple transition-colors;
+  }
+
+  .faq-answer {
+    @apply mt-3 text-sm text-muted leading-relaxed hidden;
+  }
+
+  .faq-item.active .faq-answer {
+    @apply block;
   }
 }
