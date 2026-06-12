@@ -17,7 +17,7 @@ func baseHtml(title pageTitle: String, @NodeBuilder children: () -> NodeConverti
       link(crossorigin: "true", href: "https://fonts.gstatic.com", rel: "preconnect")
       link(href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap", rel: "stylesheet")
       
-      link(href: Saga.hashed("/static/style.css"), rel: "stylesheet")
+      link(href: Saga.hashed("./static/style.css"), rel: "stylesheet")
     }
     body {
       header(class: "site-header") {
